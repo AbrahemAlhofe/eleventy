@@ -1,0 +1,25 @@
+---
+pagination:
+  data: books
+  size: 1
+  alias: book
+  addAllPagesToCollections: true
+permalink: "books/{{ book.title | slug }}/index.html"
+tags: book
+eleventyComputed:
+  title: "{{ book.title }}"
+  thumbnail: "{{ book.imageLink }}"
+date: Created
+---
+{% extends "layouts/default.njk" %}
+{% block content %}
+{%- for item in pagination.items %}
+  <h1>{{ item.title }}</h1>
+  <ul class='card-text'>
+    <li>Author: {{ book.author }}</li>
+    <li>Year: {{ book.year }}</li>
+    <li>Pages: {{ book.pages }}</li>
+  </ul>
+  <div>{{ page.date }}</div>
+{% endfor -%}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% macro card(cardTitle = "", image = "", cardUrl = "") %}
+<div class="card mb-2" style="height: 12em">
+    <div class="row g-0 h-100">
+        <div class="col-md-4 h-100">
+            <img src="{{ image }}" class="card-img-top h-100" alt="{{ cardTitle }}">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ cardTitle }}</h5>
+                {{ caller () }}
+                <a href="{{ cardUrl }}" class="btn btn-primary">Read</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

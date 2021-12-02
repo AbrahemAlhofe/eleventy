@@ -1,0 +1,23 @@
+{% set title = "Home" %}
+{% extends "layouts/default.njk" %}
+{% from "macros/card.njk" import card %}
+
+{% block content %}
+<div class='container'>
+  
+  {% for book in books %}
+
+    {% call card(book.title, book.imageLink, "/books/" + book.title | slug) %}
+    
+        <ul class='card-text'>
+            <li>Author: {{ book.author }}</li>
+            <li>Year: {{ book.year }}</li>
+            <li>Pages: {{ book.pages }}</li>
+        </ul>
+
+    {% endcall %}
+
+  {% endfor %}
+  
+</div>
+{% endblock %}
