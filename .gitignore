@@ -133,6 +133,6 @@ dist
 .svelte-kit
 
 # Eleventy Build
-docs/
+.dev
 
 # End of https://www.toptal.com/developers/gitignore/api/node

@@ -5,7 +5,7 @@
     "cross-env": "^7.0.3"
   },
   "scripts": {
-    "build:dev": "cross-env DEBUG='' npx eleventy --serve --input=./src --output=./docs",
+    "build:dev": "cross-env DEBUG='' npx eleventy --serve --input=./src --output=./.dev",
     "build:prod": "npx eleventy --input=./src --output=./docs --incremental",
     "build:debug": "cross-env DEBUG=Eleventy* npx eleventy --input=./src --output=./docs --dryrun"
   }
